@@ -1,20 +1,28 @@
+import Link from "next/link";
+
 export default function MangaPage() {
+
+const chapters = [
+ { id: "chapter1", title: "Chapter 1" }
+];
 
 return (
 
-<div className="bg-black text-white min-h-screen p-10">
+<div style={{padding:40}}>
 
-<h1 className="text-3xl mb-6">Yukiyo Manga</h1>
+<h1>Манга</h1>
 
-<img src="/cover1.jpg" className="w-48 mb-6"/>
+<h2>Chapter</h2>
 
-<h2 className="text-xl mb-4">📖 Chapter List</h2>
+{chapters.map((ch)=>(
+<div key={ch.id}>
 
-<ul className="space-y-2">
-<li>Chapter 1</li>
-<li>Chapter 2</li>
-<li>Chapter 3</li>
-</ul>
+<Link href={`/reader?ch=${ch.id}`}>
+{ch.title}
+</Link>
+
+</div>
+))}
 
 </div>
 
