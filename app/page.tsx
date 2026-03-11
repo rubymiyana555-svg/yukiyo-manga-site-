@@ -1,42 +1,46 @@
+
 export default function Home() {
-  const series = [
-    {
-      id: 1,
-      title: "Yukiyo",
-      image: "https://placehold.co/300x400"
-    },
-    {
-      id: 2,
-      title: "Dark Hero",
-      image: "https://placehold.co/300x400"
-    },
-    {
-      id: 3,
-      title: "Magic World",
-      image: "https://placehold.co/300x400"
-    }
-  ];
-
   return (
-    <main style={{background:"#111",minHeight:"100vh",color:"white",padding:"40px"}}>
-      <h1 style={{fontSize:"40px",marginBottom:"30px"}}>WEBTOON</h1>
+    <div className="min-h-screen bg-gray-100">
 
-      <div
-        style={{
-          display:"grid",
-          gridTemplateColumns:"repeat(auto-fill,200px)",
-          gap:"20px"
-        }}
-      >
-        {series.map((item) => (
-          <a key={item.id} href={`/manga/${item.id}`} style={{textDecoration:"none",color:"white"}}>
-            <div>
-              <img src={item.image} style={{width:"200px",borderRadius:"10px"}} />
-              <p style={{marginTop:"10px"}}>{item.title}</p>
-            </div>
-          </a>
-        ))}
-      </div>
-    </main>
+      {/* Header */}
+      <header className="bg-black text-white p-4 flex justify-between items-center">
+        <h1 className="text-2xl font-bold">Yukiyo Manga</h1>
+
+        <nav className="flex gap-6">
+          <a className="hover:text-green-400 cursor-pointer">Нүүр</a>
+          <a className="hover:text-green-400 cursor-pointer">Цуврал</a>
+          <a className="hover:text-green-400 cursor-pointer">Алдартай</a>
+        </nav>
+      </header>
+
+      {/* Manga List */}
+      <main className="p-8">
+        <h2 className="text-2xl font-bold mb-6">📚 Манга жагсаалт</h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+          {/* Manga 1 */}
+          <div className="bg-white p-4 rounded-xl shadow hover:scale-105 transition">
+            <img
+              src="https://placehold.co/300x400"
+              className="rounded-lg mb-2"
+            />
+            <p className="font-semibold">My First Manga</p>
+          </div>
+
+          {/* Manga 2 */}
+          <div className="bg-white p-4 rounded-xl shadow hover:scale-105 transition">
+            <img
+              src="https://placehold.co/300x400"
+              className="rounded-lg mb-2"
+            />
+            <p className="font-semibold">Yukiyo Story</p>
+          </div>
+
+        </div>
+      </main>
+
+    </div>
   );
-}
+} 
