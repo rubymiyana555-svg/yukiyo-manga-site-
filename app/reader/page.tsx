@@ -8,7 +8,10 @@ const pages = [
 
 return(
 
-<div style={{background:"black",padding:20}}>
+<div style={{
+background:"black",
+padding:20
+}}>
 
 {pages.map((img,i)=>(
 <img
@@ -25,6 +28,5 @@ margin:"auto"
 
 </div>
 
-)
-
+);
 }
