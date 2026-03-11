@@ -44,3 +44,59 @@ export default function Home() {
     </div>
   );
 } 
+import Link from "next/link";
+
+export default function MangaPage() {
+
+const chapters = [
+{ id: 1, title: "Chapter 1" },
+{ id: 2, title: "Chapter 2" },
+];
+
+return (
+
+<div className="p-10 text-white">
+
+<h1 className="text-3xl mb-6">Yukiyo Manga</h1>
+
+<h2 className="text-xl mb-4">📖 Chapters</h2>
+
+<ul className="space-y-2">
+
+{chapters.map((ch) => (
+
+<li key={ch.id}>
+
+<Link href="/reader">
+📚 {ch.title}
+
+</Link>
+
+</li>
+
+))}
+
+</ul>
+
+</div>
+
+);
+
+}
+export default function Home() {
+
+return (
+
+<div className="p-10">
+
+<h1 className="text-3xl mb-6">Yukiyo Manga</h1>
+
+<button className="bg-red-600 text-white px-4 py-2 rounded">
+Google‑ээр нэвтрэх
+</button>
+
+</div>
+
+);
+
+}
