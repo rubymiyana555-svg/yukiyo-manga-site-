@@ -1,45 +1,58 @@
-"use client";
+import Link from "next/link";
 
-import { useState } from "react";
+export default function Home() {
 
-export default function Admin() {
-
-const [cover,setCover] = useState(null);
-const [pages,setPages] = useState([]);
+const mangas = [
+ { id: "manga1", title: "Shadow Blade", cover: "/covers/manga1.jpg" },
+ { id: "manga2", title: "Yukiyo Story", cover: "/covers/manga2.jpg" }
+];
 
 return (
 
-<div style={{padding:40}}>
+<div style={{fontFamily:"sans-serif"}}>
 
-<h1>📤 Manga Upload</h1>
-
-<h2>Манганы нэр</h2>
-<input placeholder="Manga title" />
-
-<h2>Cover зураг</h2>
-<input 
-type="file"
-onChange={(e)=>setCover(e.target.files[0])}
-/>
-
-<h2>Chapter зургууд</h2>
-
-<input 
-type="file"
-multiple
-onChange={(e)=>setPages([...e.target.files])}
-/>
-
-<p>{pages.length} зураг сонгогдсон</p>
-
-<button style={{
-padding:"10px 20px",
-marginTop:20,
-background:"black",
-color:"white"
+{/* Header */}
+<div style={{
+background:"#111",
+color:"white",
+padding:"15px 30px",
+display:"flex",
+justifyContent:"space-between"
 }}>
-Upload
-</button>
+<h2>Yukiyo Manga</h2>
+<div>
+<a href="/" style={{marginRight:20,color:"white"}}>Home</a>
+<a href="#" style={{marginRight:20,color:"white"}}>Series</a>
+<a href="#" style={{color:"white"}}>Trending</a>
+</div>
+</div>
+
+{/* Manga Grid */}
+<div style={{
+padding:40,
+display:"grid",
+gridTemplateColumns:"repeat(auto-fill,150px)",
+gap:20
+}}>
+
+{mangas.map((manga)=>(
+<Link key={manga.id} href={`/manga/${manga.id}`}>
+
+<div>
+
+<img
+src={manga.cover}
+style={{width:"150px",borderRadius:"8px"}}
+/>
+
+<p>{manga.title}</p>
+
+</div>
+
+</Link>
+))}
+
+</div>
 
 </div>
 

@@ -1,3 +1,4 @@
+
 export default function Reader(){
 
 const pages = [
@@ -8,13 +9,7 @@ const pages = [
 
 return(
 
-<div style={{
-background:"#000",
-width:"100%",
-display:"flex",
-flexDirection:"column",
-alignItems:"center"
-}}>
+<div style={{background:"#000"}}>
 
 {pages.map((img,i)=>(
 <img
@@ -22,8 +17,9 @@ key={i}
 src={img}
 style={{
 width:"100%",
-maxWidth:"900px",
-display:"block"
+maxWidth:"800px",
+display:"block",
+margin:"0 auto"
 }}
 />
 ))}
