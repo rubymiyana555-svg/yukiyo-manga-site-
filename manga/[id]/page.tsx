@@ -1,14 +1,15 @@
-export default function MangaPage() {
+export default function MangaReader() {
   return (
-    <main style={{padding:"40px"}}>
-      <h1>📖 Manga Reader</h1>
+    <div className="flex flex-col items-center bg-black min-h-screen p-6">
 
-      <p>This is where manga pages will appear.</p>
+      <h1 className="text-white text-2xl mb-6">
+        Yukiyo Manga - Chapter 1
+      </h1>
 
-      <img src="/manga1/page1.jpg" style={{width:"100%"}} />
-      <img src="/manga1/page2.jpg" style={{width:"100%"}} />
-      <img src="/manga1/page3.jpg" style={{width:"100%"}} />
+      <img src="https://placehold.co/800x1200" />
+      <img src="https://placehold.co/800x1200" />
+      <img src="https://placehold.co/800x1200" />
 
-    </main>
+    </div>
   );
-}
+} 
