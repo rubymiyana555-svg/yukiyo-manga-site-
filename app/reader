@@ -1,0 +1,22 @@
+export default function Reader() {
+
+const pages = [
+"/chapter1/1.jpg",
+"/chapter1/2.jpg",
+"/chapter1/3.jpg",
+];
+
+return (
+<div className="bg-black min-h-screen flex flex-col items-center p-6">
+
+<h1 className="text-white text-2xl mb-6">
+Yukiyo Manga - Chapter 1
+</h1>
+
+{pages.map((img, i) => (
+<img key={i} src={img} className="max-w-3xl mb-4" />
+))}
+
+</div>
+);
+}
