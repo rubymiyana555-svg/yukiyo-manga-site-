@@ -9,8 +9,11 @@ const pages = [
 return(
 
 <div style={{
-background:"black",
-padding:20
+background:"#000",
+width:"100%",
+display:"flex",
+flexDirection:"column",
+alignItems:"center"
 }}>
 
 {pages.map((img,i)=>(
@@ -19,9 +22,8 @@ key={i}
 src={img}
 style={{
 width:"100%",
-maxWidth:"800px",
-display:"block",
-margin:"auto"
+maxWidth:"900px",
+display:"block"
 }}
 />
 ))}
